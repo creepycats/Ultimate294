@@ -11,7 +11,7 @@ This Recreation Features:
 - Controllable Spawn Locations
 - Usage Limit Control
 - *Sound and Animation* for Dispensing Drinks
-- **100+ Unique Drinks (Double that for the different Names) ported from Containment Breach, including custom drinks from the Banana's Bungalow community**
+- [**100+ Unique Drinks (Double that for the different Names) ported from Containment Breach, including custom drinks from the Banana's Bungalow community**](https://github.com/creepycats/Ultimate294/blob/main/Types/Config/DrinkList.cs)
 - Silly Secret Commands :3
 
 
