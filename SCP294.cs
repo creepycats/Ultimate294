@@ -8,6 +8,7 @@ using MapEditorReborn.API.Features.Objects;
 using SCP294.Classes;
 using SCP294.Types;
 using HarmonyLib;
+using Exiled.API.Enums;
 
 namespace SCP294
 {
@@ -15,7 +16,9 @@ namespace SCP294
     {
         public override string Name => "Ultimate294";
         public override string Author => "creepycats";
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 1, 0);
+
+        public override PluginPriority Priority => PluginPriority.Highest;
 
         public static SCP294 Instance { get; set; }
 
@@ -24,8 +27,11 @@ namespace SCP294
         public Dictionary<SchematicObject, LightSourceObject> SCP294LightSources { get; set; } = new Dictionary<SchematicObject, LightSourceObject>();
         public List<string> PlayersNear294 { get; set; } = new List<string>();
         public Dictionary<ushort, DrinkInfo> CustomDrinkItems = new Dictionary<ushort, DrinkInfo>();
+        public DrinkManager DrinkManager = new DrinkManager();
 
         private Harmony _harmony;
+
+        private CoroutineHandle hintCoroutine;
 
         public override void OnEnabled()
         {
@@ -35,7 +41,9 @@ namespace SCP294
                 Log.Info("Registering events...");
             RegisterEvents();
 
-            Timing.RunCoroutine(SCP294Object.Handle294Hint());
+            DrinkManager.LoadBaseDrinks();
+
+            hintCoroutine = Timing.RunCoroutine(SCP294Object.Handle294Hint());
 
             _harmony = new Harmony("SCP294");
             _harmony.PatchAll();
@@ -47,6 +55,10 @@ namespace SCP294
             if (Config.Debug)
                 Log.Info("Unregistering events...");
             UnregisterEvents();
+
+            DrinkManager.UnloadAllDrinks();
+
+            Timing.KillCoroutines(hintCoroutine);
 
             _harmony.UnpatchAll();
             _harmony = null;

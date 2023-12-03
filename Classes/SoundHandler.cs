@@ -160,7 +160,7 @@ namespace SCP294
             NetworkServer.AddPlayerForConnection(new FakeConnection(id), gameObject);
             try
             {
-                npc.ReferenceHub.authManager.NetworkSyncedUserId = "ID_Dedicated";
+                npc.ReferenceHub.authManager.NetworkSyncedUserId = null;
             }
             catch (Exception arg2)
             {

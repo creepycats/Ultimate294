@@ -29,51 +29,31 @@ namespace SCP294.Config
                 [RoomType.EzUpstairsPcs] = new List<SpawnTransform>(){
                     new SpawnTransform() {
                         Position = new Vector3(-5.15f, 0f, 2f),
-                        Rotation = new EulerRotation() {
-                            X = 0,
-                            Y = -90,
-                            Z = 0
-                        },
+                        Rotation = new Vector3(0f, -90f, 0f),
                         Scale = Vector3.one
                     } 
                 },
                 [RoomType.EzPcs] = new List<SpawnTransform>(){
                     new SpawnTransform() {
                         Position = new Vector3(-7f, 0f, -1.75f),
-                        Rotation = new EulerRotation() {
-                            X = 0,
-                            Y = -90,
-                            Z = 0
-                        },
+                        Rotation = new Vector3(0f, -90f, 0f),
                         Scale = Vector3.one
                     },
                     new SpawnTransform() {
                         Position = new Vector3(2.5f, 0f, 6.8f),
-                        Rotation = new EulerRotation() {
-                            X = 0,
-                            Y = 0,
-                            Z = 0
-                        },
+                        Rotation = new Vector3(0f, 0f, 0f),
                         Scale = Vector3.one
                     }
                 },
                 [RoomType.EzDownstairsPcs] = new List<SpawnTransform>(){
                     new SpawnTransform() {
                         Position = new Vector3(7f, -1.5f, -5.8f),
-                        Rotation = new EulerRotation() {
-                            X = 0,
-                            Y = 90,
-                            Z = 0
-                        },
+                        Rotation = new Vector3(0f, 90f, 0f),
                         Scale = Vector3.one
                     },
                     new SpawnTransform() {
                         Position = new Vector3(7f, -1.5f, 5.8f),
-                        Rotation = new EulerRotation() {
-                            X = 0,
-                            Y = 90,
-                            Z = 0
-                        },
+                        Rotation = new Vector3(0f, 90f, 0f),
                         Scale = Vector3.one
                     }
                 }

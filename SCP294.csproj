@@ -33,6 +33,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Classes\DrinkManager.cs" />
     <Compile Include="Classes\SCP294Object.cs" />
     <Compile Include="Classes\SoundHandler.cs" />
     <Compile Include="Commands\SCP294AdminCommand.cs" />
@@ -47,7 +48,6 @@
     <Compile Include="Types\Config\DrinkEffect.cs" />
     <Compile Include="Types\Config\DrinkList.cs" />
     <Compile Include="Types\Config\SpawningConfig.cs" />
-    <Compile Include="Types\Config\EulerRotation.cs" />
     <Compile Include="Types\Config\SpawnTransform.cs" />
     <Compile Include="Types\DrinkInfo.cs" />
     <Compile Include="Types\DrinkSound.cs" />

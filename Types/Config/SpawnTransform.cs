@@ -17,9 +17,7 @@ namespace SCP294.Types
         /// <summary>
         /// The rotation for SCP-294 to spawn at, relative to room's transform
         /// </summary>
-        public EulerRotation Rotation { get; set; } = new EulerRotation() { 
-            X = 0, Y = 0, Z = 0,
-        };
+        public Vector3 Rotation { get; set; } = new Vector3(0, 0, 0);
         /// <summary>
         /// The scale for SCP-294's schematic, default Vector3.one
         /// </summary>

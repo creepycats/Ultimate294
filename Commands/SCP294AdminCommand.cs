@@ -166,10 +166,7 @@ namespace SCP294.Commands
                 else
                 {
                     // Other Drinks
-                    List<CustomDrink> CombinedDrinks = new List<CustomDrink>();
-                    CombinedDrinks = CombinedDrinks.Concat(DrinkList.DefaultDrinks).ToList();
-                    if (SCP294.Instance.Config.EnableCommunityDrinks) CombinedDrinks = CombinedDrinks.Concat(DrinkList.CommunityDrinks).ToList();
-                    foreach (CustomDrink customDrink in CombinedDrinks)
+                    foreach (CustomDrink customDrink in SCP294.Instance.DrinkManager.LoadedDrinks)
                     {
                         foreach (string drinkName in customDrink.DrinkNames)
                         {
