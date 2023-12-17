@@ -13,12 +13,14 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using VoiceChat;
+using VoiceChat.Codec;
 using YamlDotNet.Core.Tokens;
 
 namespace SCP294
 {
     public class SoundHandler
     {
+        public OpusEncoder Encoder = new OpusEncoder(VoiceChat.Codec.Enums.OpusApplicationType.Voip);
 
         // Borrowed from AutoEvents <3
         public static List<ReferenceHub> AudioPlayers = new List<ReferenceHub>();

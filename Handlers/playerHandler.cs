@@ -16,6 +16,11 @@ namespace SCP294.handlers
 {
     public class playerHandler
     {
+        public void Joined(JoinedEventArgs args)
+        {
+
+        }
+
         public void ChangingItem(ChangingItemEventArgs args) {
             if (args.Player == null) return;
             if (args.Item == null) return;

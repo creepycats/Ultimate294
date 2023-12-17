@@ -9,6 +9,7 @@ using SCP294.Classes;
 using SCP294.Types;
 using HarmonyLib;
 using Exiled.API.Enums;
+using VoiceChat.Codec;
 
 namespace SCP294
 {
@@ -16,7 +17,7 @@ namespace SCP294
     {
         public override string Name => "Ultimate294";
         public override string Author => "creepycats";
-        public override Version Version => new Version(1, 1, 0);
+        public override Version Version => new Version(1, 1, 1);
 
         public override PluginPriority Priority => PluginPriority.Highest;
 
@@ -28,10 +29,13 @@ namespace SCP294
         public List<string> PlayersNear294 { get; set; } = new List<string>();
         public Dictionary<ushort, DrinkInfo> CustomDrinkItems = new Dictionary<ushort, DrinkInfo>();
         public DrinkManager DrinkManager = new DrinkManager();
+        public Dictionary<string, float> PlayerVoicePitch = new Dictionary<string, float>();
 
         private Harmony _harmony;
 
         private CoroutineHandle hintCoroutine;
+
+        public Dictionary<ReferenceHub, OpusComponent> Encoders = new Dictionary<ReferenceHub, OpusComponent>();
 
         public override void OnEnabled()
         {
@@ -82,6 +86,7 @@ namespace SCP294
 
             Player.ChangingItem += PlayerHandler.ChangingItem;
             Player.UsedItem += PlayerHandler.UsedItem;
+            Player.Joined += PlayerHandler.Joined;
         }
         public void UnregisterEvents()
         {
@@ -89,6 +94,7 @@ namespace SCP294
 
             Player.ChangingItem -= PlayerHandler.ChangingItem;
             Player.UsedItem -= PlayerHandler.UsedItem;
+            Player.Joined -= PlayerHandler.Joined;
         }
     }
 }

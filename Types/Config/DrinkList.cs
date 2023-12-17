@@ -1817,7 +1817,6 @@ namespace SCP294.Types.Config
                     "Superfluid",
                     "Superfluid Helium",
                     "Liquid Helium",
-                    "Helium",
                     "Helium-4"
                 },
                 AntiColaModel = false,
@@ -2931,6 +2930,35 @@ namespace SCP294.Types.Config
 
                 }
             }, // Rest in peace, Soup
+            new CustomDrink()
+            {
+                DrinkNames = new List<string>(){
+                    "Helium",
+                    "High Pitch"
+                },
+                AntiColaModel = true,
+                BackfireChance = 0f,
+                DrinkMessage = "Cool party trick... (Voice is now high pitched for 1.5 minutes)",
+                DrinkEffects = new List<DrinkEffect>(){
+
+                },
+                DrinkCallback = DrinkCallbacks.Helium
+            }, // Helium VOICE CHANGE
+            new CustomDrink()
+            {
+                DrinkNames = new List<string>(){
+                    "Sulfur",
+                    "Sulfur Hexaflouride",
+                    "Low Pitch"
+                },
+                AntiColaModel = false,
+                BackfireChance = 0f,
+                DrinkMessage = "Cool party trick... (Voice is now low pitched for 1.5 minutes)",
+                DrinkEffects = new List<DrinkEffect>(){
+
+                },
+                DrinkCallback = DrinkCallbacks.Sulfur
+            }, // Sulfur VOICE CHANGE
         };
     }
 }

@@ -1,16 +1,8 @@
-﻿using Exiled.API.Enums;
-using Exiled.API.Features;
-using Exiled.Events;
-using Exiled.Events.EventArgs;
-using SCP294.Utils;
-using System.Collections.Generic;
-using MapEditorReborn.API;
-using MapEditorReborn.API.Features;
-using MapEditorReborn.Commands.ModifyingCommands.Scale;
-using UnityEngine;
+﻿using MapEditorReborn.API.Features.Objects;
 using SCP294.Classes;
-using MapEditorReborn.API.Features.Objects;
 using SCP294.Types;
+using System.Collections.Generic;
+using VoiceChat.Codec;
 
 namespace SCP294.handlers
 {
@@ -20,6 +12,8 @@ namespace SCP294.handlers
             SCP294.Instance.SpawnedSCP294s = new Dictionary<SchematicObject, bool>();
             SCP294.Instance.PlayersNear294 = new List<string>();
             SCP294.Instance.CustomDrinkItems = new Dictionary<ushort, DrinkInfo>();
+            SCP294.Instance.PlayerVoicePitch = new Dictionary<string, float>();
+            SCP294.Instance.Encoders = new Dictionary<ReferenceHub, OpusComponent>();
             SCP294Object.SpawnSCP294();
         }
     }

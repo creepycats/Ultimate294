@@ -155,6 +155,29 @@ namespace SCP294.Types.Config
             {
                 player.Scale = new Vector3(player.Scale.x, player.Scale.y, SCP294.Instance.Config.MinSizeFromDrink.z);
             }
+
+            // VOICE
+            SCP294.Instance.PlayerVoicePitch[player.UserId] = Mathf.Clamp((1-player.Scale.y) + 1f,0.1f,2f);
+        }
+
+        public static void Helium(Player player)
+        {
+            SCP294.Instance.PlayerVoicePitch[player.UserId] = 1.6f;
+            Timing.CallDelayed(90f, () =>
+            {
+                // VOICE
+                SCP294.Instance.PlayerVoicePitch[player.UserId] = Mathf.Clamp((1 - player.Scale.y) + 1f, 0.1f, 2f);
+            });
+        }
+
+        public static void Sulfur(Player player)
+        {
+            SCP294.Instance.PlayerVoicePitch[player.UserId] = 0.4f;
+            Timing.CallDelayed(90f, () =>
+            {
+                // VOICE
+                SCP294.Instance.PlayerVoicePitch[player.UserId] = Mathf.Clamp((1 - player.Scale.y) + 1f, 0.1f, 2f);
+            });
         }
     }
 }
