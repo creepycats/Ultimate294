@@ -67,6 +67,13 @@ namespace SCP294.Commands
                     response = "This SCP-294 is on cooldown!";
                     return false;
                 }
+                
+                if (arguments.Count == 1 && arguments.At(0).ToLower() == "list")
+                {
+                    response = DrinkManager.GetAllDrinkNames();
+                    return true;
+                }
+                
                 if (SCP294.Instance.SCP294UsesLeft[scp294] == 0)
                 {
                     response = "This SCP-294 has been deactivated...";
@@ -77,11 +84,14 @@ namespace SCP294.Commands
                     response = "Requires you hold a coin to work | Usage: .scp294 <drink-name> OR .scp294 player <player>";
                     return false;
                 }
+                
+                
                 if (player.CurrentItem == null || player.CurrentItem.Type != ItemType.Coin)
                 {
                     response = "You aren't holding a coin to buy a drink with.";
                     return false;
                 }
+                
                 if (arguments.Count > 0 && arguments.At(0).ToLower() == "player") {
                     // Player Cup
                     // Try and Get player
