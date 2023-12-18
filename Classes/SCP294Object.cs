@@ -48,7 +48,7 @@ namespace SCP294.Classes
                             }
                             else
                             {
-                                player.ShowHint("<size=300>\n</size>\n<size=35>You Approach SCP-294.</size>\n<size=30>If you had a coin, you could buy a drink...</size>\n<size=20>(Hold a Coin, Open Console, Use the command '.scp294 <drink>' to dispense your drink of choice)</size>", 3);
+                                player.ShowHint("<size=300>\n</size>\n<size=35>You Approach SCP-294.</size>\n<size=30>If you had a coin, you could buy a drink...</size>\n<size=15>(Hold a Coin, Open Console, Use the command '.scp294 <drink>' to dispense your drink of choice or '.scp294 list' to get a list of available drinks.)</size>", 3);
                             }
                             SCP294.Instance.PlayersNear294.Add(player.UserId);
                         }

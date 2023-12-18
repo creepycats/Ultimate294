@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MEC;
 using MapEditorReborn.API.Features.Objects;
 using Exiled.API.Features;
+using HarmonyLib;
 
 namespace SCP294.Classes
 {
@@ -65,6 +66,26 @@ namespace SCP294.Classes
             }
 
             SCP294.Instance.DrinkManager.LoadedDrinks = SCP294.Instance.DrinkManager.LoadedDrinks.Except(newDrink.ToList()).ToList();
+        }
+
+        /*
+         * Gets all Drink names for .scp294 list command
+         */
+        
+        public static string GetAllDrinkNames()
+        {
+            List<string> allDrinkNamesList = new List<string>();
+            String allDrinkNames = " ";
+            
+            foreach (CustomDrink customDrink in SCP294.Instance.DrinkManager.LoadedDrinks)
+            {
+                foreach (string drinkName in customDrink.DrinkNames)
+                {
+                    allDrinkNamesList.Add(drinkName);
+                }
+            }
+            allDrinkNames = String.Join(", ", allDrinkNamesList);
+            return allDrinkNames;
         }
     }
 }
